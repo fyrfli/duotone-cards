@@ -42,12 +42,13 @@ body {
 }
 .maria {
     background-image: url("../Images/image-1.jpg");
-    /* width: 300px;
-    height: 230px; */
+    width: 300px;
+    height: 230px;
     background-origin: border-box;
     background-clip: border-box;
     background-repeat: no-repeat;
     background-size:  201px 230px;
+    filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
 }
 .cards__item img {
     width: 300px;
@@ -56,13 +57,12 @@ body {
     opacity: 0.63;
     display: block;
     margin: auto;
-    filter: hue-rotate(180deg);
+    filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(230deg);
 }
-.cards__item img:after {
-    display: inline-block;
-    position: absolute;
-    background-color: var(--color-navy-opaque);
-    /* mix-blend-mode: overlay; */
+.cards__item img:hover {
+    filter: none;
+    opacity: 1;
+    transition: opacity 2s;
 }
 .cards__item figcaption {
     box-sizing: border-box;
@@ -80,4 +80,19 @@ body {
 /* footer */
 footer {
     text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+    width: calc(900px + 40px);
+    margin-top: 20vh;
+    }
+    .cards__items {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .headline {
+        text-align: left;
+        
+    }
 }
